@@ -1,0 +1,1429 @@
+<html>
+<head>
+<script language="javascript">
+var i, j, tmpColor, sltIndex, sltValue, msg, mailAdd, mailCounter=0, help, x, picIndex=0;
+var onePic, twoPic, threePic, pic;
+var numOfClicks=0, mem1ch=0, mem2ch=0, mem3ch=0, mem4ch=0, mem5ch=0, mem6ch=0;
+var mem11tmp=0, mem22tmp=0, mem33tmp=0, mem44tmp=0, mem55tmp=0, mem66tmp=0;
+var mem77tmp=0, mem88tmp=0, mem99tmp=0, mem1010tmp=0, mem1111tmp=0, mem1212tmp=0;
+var mem12win=0,  mem34win=0, mem56win=0, mem78win=0, mem910win=0, mem1112win=0;
+var itemValue = new Array(100);
+var score=0, msg2, access=0;
+//var splitMail1 = new Array () ;
+//var splitMail2 = new Array () ;
+
+onePic = new Image ();
+onePic.src = "PICS/1.png" ;
+twoPic = new Image ();
+twoPic.src = "PICS/2.png" ;
+threePic = new Image ();
+threePic.src = "PICS/3.png" ;
+
+pic = new Array () ;
+pic[0] = onePic.src ;
+pic[1] = twoPic.src ;
+pic[2] = threePic.src ;
+
+function changeBG () {
+	var newBG;
+	newBG = document.myForm.bgRead.value;
+	newBG = newBG.toLowerCase();
+	if(newBG != "black" && newBG != "" && newBG != "000000"){
+		document.bgColor=newBG;}
+	else{
+		window.alert("אסור להקליד צבע שחור או להשאיר ריק");}
+		document.myForm.bgRead.focus();
+	}
+function back2original () {document.bgColor="lightblue";}
+function deleteBG() {
+	document.myForm.bgRead.value="";
+	document.myForm.bgRead.focus();
+	}
+function checkName() {
+	sltIndex = document.myForm.names.selectedIndex ;
+	sltValue = document.myForm.names.options[sltIndex].value ;
+	msg = "" ;
+	msg += "נכון מאוד!!! רותם היא אכן" ;
+	msg += " " + sltValue ;
+	alert(msg);
+	}
+function checkMail() {
+	mailAdd = document.myForm.mailRead.value;
+	//help = mailAdd;
+	//splitMail1 = mailAdd.split("@");
+	//splitMail2 = help.split(".");
+	//for(i=0;i<splitMail1.length;i++){
+		//if(splitMail1[i] == ""){mailCounter=1;}
+		//}
+	//for(i=0;i<splitMail2.length;i++){
+		//if(splitMail2[i] == ""){mailCounter=1;}
+		//}   // && mailCounter==0
+	if (mailAdd.indexOf("@") != -1 && mailAdd.indexOf(".") > 0 && mailAdd.indexOf("@") > 0){alert("הכתובת תקינה");}
+	else {
+		alert("הכתובת שגויה. יש לכתוב לפחות @ אחד ונקודה אחת");
+		document.myForm.mailRead.focus();
+		}
+	}
+function deleteMail () {
+	document.myForm.mailRead.value="";
+	document.myForm.mailRead.focus();
+	}
+function addShtrudel () {
+	document.myForm.mailRead.value += "@";
+	document.myForm.mailRead.focus();
+	}
+function addDotCom () {
+	document.myForm.mailRead.value += ".com";
+	document.myForm.mailRead.focus();
+	}
+function addDotCoIl () {
+	document.myForm.mailRead.value += ".co.il";
+	document.myForm.mailRead.focus();
+	}
+function initAnimation () {
+	x = setInterval ('animation();' ,1000) ;
+	//clearInterval(x);
+	}
+function animation () {
+	document.images['lovePic'].src = pic[picIndex] ;
+	picIndex++;
+	if (picIndex > 2) { picIndex=0; }
+	}
+function aniStop () {
+	clearInterval(x);
+	document.images['lovePic'].src = pic[1] ;
+	}
+function memAct1 (picName) {
+	if(mem1ch == 0) {
+		picName.src = "PICS/1.png" ;
+		mem1ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem1ch=0;
+		}
+	}
+function memAct2 (picName) {
+	if(mem2ch==0) {
+		picName.src = "PICS/2.png" ;
+		mem2ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem2ch=0;
+		}
+	}
+function memAct3 (picName) {
+	if(mem3ch==0) {
+		picName.src = "PICS/3.png" ;
+		mem3ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem3ch=0;
+		}
+	}
+function memAct4 (picName) {
+	if(mem4ch==0) {
+		picName.src = "PICS/3.png" ;
+		mem4ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem4ch=0;
+		}
+	}
+function memAct5 (picName) {
+	if(mem5ch==0) {
+		picName.src = "PICS/2.png" ;
+		mem5ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem5ch=0;
+		}
+	}
+function memAct6 (picName) {
+	if(mem6ch==0) {
+		picName.src = "PICS/1.png" ;
+		mem6ch=1;
+		}
+	else {
+		picName.src = "PICS/backCard.png" ;
+		mem6ch=0;
+		}
+	}
+function marvelCh () {
+	score=0;
+	var msg2;
+	for (i=0; i<4; i++){
+	if(document.myForm.q1[i].checked){
+		itemValue[1]=document.myForm.q1[i].value;
+		if(itemValue[1]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q2[i].checked){
+		itemValue[2]=document.myForm.q2[i].value;
+		if(itemValue[2]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q3[i].checked){
+		itemValue[3]=document.myForm.q3[i].value;
+		if(itemValue[3]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q4[i].checked){
+		itemValue[4]=document.myForm.q4[i].value;
+		if(itemValue[4]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q5[i].checked){
+		itemValue[5]=document.myForm.q5[i].value;
+		if(itemValue[5]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q6[i].checked){
+		itemValue[6]=document.myForm.q6[i].value;
+		if(itemValue[6]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q7[i].checked){
+		itemValue[7]=document.myForm.q7[i].value;
+		if(itemValue[7]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q8[i].checked){
+		itemValue[8]=document.myForm.q8[i].value;
+		if(itemValue[8]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q9[i].checked){
+		itemValue[9]=document.myForm.q9[i].value;
+		if(itemValue[9]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q10[i].checked){
+		itemValue[10]=document.myForm.q10[i].value;
+		if(itemValue[10]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q11[i].checked){
+		itemValue[11]=document.myForm.q11[i].value;
+		if(itemValue[11]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q12[i].checked){
+		itemValue[12]=document.myForm.q12[i].value;
+		if(itemValue[12]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q13[i].checked){
+		itemValue[13]=document.myForm.q13[i].value;
+		if(itemValue[13]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q14[i].checked){
+		itemValue[14]=document.myForm.q14[i].value;
+		if(itemValue[14]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q15[i].checked){
+		itemValue[15]=document.myForm.q15[i].value;
+		if(itemValue[15]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q16[i].checked){
+		itemValue[16]=document.myForm.q16[i].value;
+		if(itemValue[16]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q17[i].checked){
+		itemValue[17]=document.myForm.q17[i].value;
+		if(itemValue[17]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q18[i].checked){
+		itemValue[18]=document.myForm.q18[i].value;
+		if(itemValue[18]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q19[i].checked){
+		itemValue[19]=document.myForm.q19[i].value;
+		if(itemValue[19]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q20[i].checked){
+		itemValue[20]=document.myForm.q20[i].value;
+		if(itemValue[20]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q21[i].checked){
+		itemValue[21]=document.myForm.q21[i].value;
+		if(itemValue[21]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q22[i].checked){
+		itemValue[22]=document.myForm.q22[i].value;
+		if(itemValue[22]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q23[i].checked){
+		itemValue[23]=document.myForm.q23[i].value;
+		if(itemValue[23]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q24[i].checked){
+		itemValue[24]=document.myForm.q24[i].value;
+		if(itemValue[24]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q25[i].checked){
+		itemValue[25]=document.myForm.q25[i].value;
+		if(itemValue[25]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q26[i].checked){
+		itemValue[26]=document.myForm.q26[i].value;
+		if(itemValue[26]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q27[i].checked){
+		itemValue[27]=document.myForm.q27[i].value;
+		if(itemValue[27]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q28[i].checked){
+		itemValue[28]=document.myForm.q28[i].value;
+		if(itemValue[28]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q29[i].checked){
+		itemValue[29]=document.myForm.q29[i].value;
+		if(itemValue[29]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q30[i].checked){
+		itemValue[30]=document.myForm.q30[i].value;
+		if(itemValue[30]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q31[i].checked){
+		itemValue[31]=document.myForm.q31[i].value;
+		if(itemValue[31]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q32[i].checked){
+		itemValue[32]=document.myForm.q32[i].value;
+		if(itemValue[32]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q33[i].checked){
+		itemValue[33]=document.myForm.q33[i].value;
+		if(itemValue[33]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q34[i].checked){
+		itemValue[34]=document.myForm.q34[i].value;
+		if(itemValue[34]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q35[i].checked){
+		itemValue[35]=document.myForm.q35[i].value;
+		if(itemValue[35]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q36[i].checked){
+		itemValue[36]=document.myForm.q36[i].value;
+		if(itemValue[36]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q37[i].checked){
+		itemValue[37]=document.myForm.q37[i].value;
+		if(itemValue[37]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q38[i].checked){
+		itemValue[38]=document.myForm.q38[i].value;
+		if(itemValue[38]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q39[i].checked){
+		itemValue[39]=document.myForm.q39[i].value;
+		if(itemValue[39]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q40[i].checked){
+		itemValue[40]=document.myForm.q40[i].value;
+		if(itemValue[40]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q41[i].checked){
+		itemValue[41]=document.myForm.q41[i].value;
+		if(itemValue[41]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q42[i].checked){
+		itemValue[42]=document.myForm.q42[i].value;
+		if(itemValue[42]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q43[i].checked){
+		itemValue[43]=document.myForm.q43[i].value;
+		if(itemValue[43]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q44[i].checked){
+		itemValue[44]=document.myForm.q44[i].value;
+		if(itemValue[44]=="Correct"){score+=10;}
+		}
+	}
+	for (i=0; i<4; i++){
+	if(document.myForm.q45[i].checked){
+		itemValue[45]=document.myForm.q45[i].value;
+		if(itemValue[45]=="Correct"){score+=10;}
+		}
+	}
+	msg2 = getMsg2();
+	window.alert(msg2);
+	}
+function getMsg2() {
+	var i, msg2;
+	msg2 = "";
+	msg2 = msg2 + "Your answers:\n" ;
+	for(i=1;i<=45;i++){
+		msg2 = msg2 + "Q" + i + ": " + itemValue[i] + ",   " ;
+		if(i%2==0){msg2 += "\n";}
+	}
+	msg2 = msg2 + "\nTotal score: " + score + " out of 450\n" ;
+	if (score == 0) {msg2 = msg2 + "Sad :(";}
+	if (score == 450) {msg2 = msg2 + "Very Good!!! :)";}
+	return msg2;	
+}
+function makeClock () {
+	thisDate2 = new Date () ;
+	var hour2, minute2, seconds2, date2;
+	hour2 = thisDate2.getHours();
+	minute2 = thisDate2.getMinutes();
+	seconds2 = thisDate2.getSeconds();
+	if (hour2<10) {hour2 = "0" + hour2;}
+	if (minute2<10) {minute2 = "0" + minute2;}
+	if (seconds2<10) {seconds2 = "0" + seconds2;}
+	date2 = "";
+	date2 += hour2 + ":" + minute2 + ":" + seconds2;
+	document.myForm2.date3.value = date2;
+	}
+function checkBirthDate () {
+	sltIndex3 = document.myForm.birthYear.selectedIndex ;
+	sltValue3 = document.myForm.birthYear.options[sltIndex3].value ;
+	sltIndex4 = document.myForm.birthMonth.selectedIndex ;
+	sltValue4 = document.myForm.birthMonth.options[sltIndex4].value ;
+	sltIndex5 = document.myForm.birthDay.selectedIndex ;
+	sltValue5 = document.myForm.birthDay.options[sltIndex5].value ;
+	thisDate3 = new Date () ;
+	year3 = thisDate3.getFullYear();
+	month3 = thisDate3.getMonth();
+	month3++;
+	day3 = thisDate3.getDate();
+	gil = year3 - sltValue3;
+	if(sltValue4>month3) {gil--;}
+	if(sltValue4==month3 && sltValue5>day3) {gil--;}
+	msg3 = "";
+	msg3 = "Your age is: " + gil + "\n";
+	if(sltValue4==6 && sltValue5==30) {msg3 += "Cool date ;)\n";}
+	if(sltValue4==9 && sltValue5==14) {msg3 += "Cool date ;)\n";}
+	if(sltValue4==10 && sltValue5==7) {msg3 += "Cool date ;)\n";}
+	if(sltValue4==month3 && sltValue5==day3) {msg3 += "Happy Birthday!!! :)\n";}
+	window.alert(msg3);
+	}
+function shieldAccess(imgOfSh) {
+	imgOfSh.src='PICS/marvel3.png';
+	access=1;
+	}
+function checkAgent() {
+	var agentName;
+	var agentNameTmp;
+	agentName = document.myForm.agentRead.value;
+	agentNameTmp = agentName;
+	agentName = agentName.toLowerCase();
+	if(agentName=="nick fury" || agentName=="natasha romanoff" || agentName=="steve rogers" || agentName=="sharon carter" || agentName=="tony stark" || agentName=="sam wilson" || agentName=="clint barton" || agentName=="maria hill" || agentName=="phil coulson" || agentName=="bruce banner" || agentName=="peter parker" || agentName=="daisy johnson" || agentName=="melinda may" || agentName=="alphonso mackenzie" || agentName=="michael peterson" || agentName=="elena rodriguez" || agentName=="tomas calderon" || agentName=="bobbi morse" || agentName=="felix blake" || agentName=="anne weaver") {
+		msg4 = "";
+		msg4 += "Welcome, ";
+		msg4 += agentNameTmp + "\n";
+		msg4 += "Access Granted\n";
+		document.myForm.marvel2.src="PICS/s1.png";
+		if(access==1){
+			msg4 += "Clearence Level 7 acquired\n";
+			document.myForm.marvel3.src="PICS/s2.png";
+			}
+		window.alert(msg4);
+		}
+	else {
+		document.myForm.marvel2.src="PICS/p1.jpg";
+		document.myForm.marvel3.src="PICS/p2.jpg";
+		window.alert("Access Denied");
+		document.myForm.agentRead.focus();
+		}
+	}
+//numOfClicks=0;
+//mem11tmp=0, mem22tmp=0, mem33tmp=0, mem44tmp=0, mem55tmp=0, mem66tmp=0;
+//mem12win=0,  mem34win=0, mem56win=0;
+function flipAllBack() {
+	numOfClicks=0;
+	mem11tmp=0;
+	mem22tmp=0;
+	mem33tmp=0;
+	mem44tmp=0;
+	mem55tmp=0;
+	mem66tmp=0;
+	mem77tmp=0;
+	mem88tmp=0;
+	mem99tmp=0;
+	mem1010tmp=0;
+	mem1111tmp=0;
+	mem1212tmp=0;
+	if(mem12win==0) {
+		document.memForm.mem11.src = "PICS/backCard.png" ;
+		document.memForm.mem22.src = "PICS/backCard.png" ;
+		}
+	if(mem34win==0) {
+		document.memForm.mem33.src = "PICS/backCard.png" ;
+		document.memForm.mem44.src = "PICS/backCard.png" ;
+		}
+	if(mem56win==0) {
+		document.memForm.mem55.src = "PICS/backCard.png" ;
+		document.memForm.mem66.src = "PICS/backCard.png" ;
+		}
+	if(mem78win==0) {
+		document.memForm.mem77.src = "PICS/backCard.png" ;
+		document.memForm.mem88.src = "PICS/backCard.png" ;
+		}
+	if(mem910win==0) {
+		document.memForm.mem99.src = "PICS/backCard.png" ;
+		document.memForm.mem1010.src = "PICS/backCard.png" ;
+		}
+	if(mem1112win==0) {
+		document.memForm.mem1111.src = "PICS/backCard.png" ;
+		document.memForm.mem1212.src = "PICS/backCard.png" ;
+		}
+	if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+function memNew(picName) {
+	if(picName==document.memForm.mem11) {
+		if(numOfClicks<2) {
+			if(mem11tmp==0 && mem12win==0) {
+				picName.src = "PICS/1.png" ;
+				mem11tmp=1;
+				numOfClicks++;
+				}
+			if(mem11tmp==1 && mem22tmp==1 && mem12win==0) {
+				mem12win=1;
+				document.memForm.mem11.src = "PICS/1win.png" ;
+				document.memForm.mem22.src = "PICS/1win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 1 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem22) {
+		if(numOfClicks<2) {
+			if(mem22tmp==0 && mem12win==0) {
+				picName.src = "PICS/1.png" ;
+				mem22tmp=1;
+				numOfClicks++;
+				}
+			if(mem11tmp==1 && mem22tmp==1 && mem12win==0) {
+				mem12win=1;
+				document.memForm.mem11.src = "PICS/1win.png" ;
+				document.memForm.mem22.src = "PICS/1win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 1 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem33) {
+		if(numOfClicks<2) {
+			if(mem33tmp==0 && mem34win==0) {
+				picName.src = "PICS/2.png" ;
+				mem33tmp=1;
+				numOfClicks++;
+				}
+			if(mem33tmp==1 && mem44tmp==1 && mem34win==0) {
+				mem34win=1;
+				document.memForm.mem33.src = "PICS/2win.png" ;
+				document.memForm.mem44.src = "PICS/2win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 2 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem44) {
+		if(numOfClicks<2) {
+			if(mem44tmp==0 && mem34win==0) {
+				picName.src = "PICS/2.png" ;
+				mem44tmp=1;
+				numOfClicks++;
+				}
+			if(mem33tmp==1 && mem44tmp==1 && mem34win==0) {
+				mem34win=1;
+				document.memForm.mem33.src = "PICS/2win.png" ;
+				document.memForm.mem44.src = "PICS/2win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 2 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem55) {
+		if(numOfClicks<2) {
+			if(mem55tmp==0 && mem56win==0) {
+				picName.src = "PICS/3.png" ;
+				mem55tmp=1;
+				numOfClicks++;
+				}
+			if(mem55tmp==1 && mem66tmp==1 && mem56win==0) {
+				mem56win=1;
+				document.memForm.mem55.src = "PICS/3win.png" ;
+				document.memForm.mem66.src = "PICS/3win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 3 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem66) {
+		if(numOfClicks<2) {
+			if(mem66tmp==0 && mem56win==0) {
+				picName.src = "PICS/3.png" ;
+				mem66tmp=1;
+				numOfClicks++;
+				}
+			if(mem55tmp==1 && mem66tmp==1 && mem56win==0) {
+				mem56win=1;
+				document.memForm.mem55.src = "PICS/3win.png" ;
+				document.memForm.mem66.src = "PICS/3win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 3 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem77) {
+		if(numOfClicks<2) {
+			if(mem77tmp==0 && mem78win==0) {
+				picName.src = "PICS/4.png" ;
+				mem77tmp=1;
+				numOfClicks++;
+				}
+			if(mem77tmp==1 && mem88tmp==1 && mem78win==0) {
+				mem78win=1;
+				document.memForm.mem77.src = "PICS/4win.png" ;
+				document.memForm.mem88.src = "PICS/4win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 4 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem88) {
+		if(numOfClicks<2) {
+			if(mem88tmp==0 && mem78win==0) {
+				picName.src = "PICS/4.png" ;
+				mem88tmp=1;
+				numOfClicks++;
+				}
+			if(mem77tmp==1 && mem88tmp==1 && mem78win==0) {
+				mem78win=1;
+				document.memForm.mem77.src = "PICS/4win.png" ;
+				document.memForm.mem88.src = "PICS/4win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 4 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem99) {
+		if(numOfClicks<2) {
+			if(mem99tmp==0 && mem910win==0) {
+				picName.src = "PICS/5.png" ;
+				mem99tmp=1;
+				numOfClicks++;
+				}
+			if(mem99tmp==1 && mem1010tmp==1 && mem910win==0) {
+				mem910win=1;
+				document.memForm.mem99.src = "PICS/5win.png" ;
+				document.memForm.mem1010.src = "PICS/5win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 5 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem1010) {
+		if(numOfClicks<2) {
+			if(mem1010tmp==0 && mem910win==0) {
+				picName.src = "PICS/5.png" ;
+				mem1010tmp=1;
+				numOfClicks++;
+				}
+			if(mem99tmp==1 && mem1010tmp==1 && mem910win==0) {
+				mem910win=1;
+				document.memForm.mem99.src = "PICS/5win.png" ;
+				document.memForm.mem1010.src = "PICS/5win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 5 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem1111) {
+		if(numOfClicks<2) {
+			if(mem1111tmp==0 && mem1112win==0) {
+				picName.src = "PICS/6.png" ;
+				mem1111tmp=1;
+				numOfClicks++;
+				}
+			if(mem1111tmp==1 && mem1212tmp==1 && mem1112win==0) {
+				mem1112win=1;
+				document.memForm.mem1111.src = "PICS/6win.png" ;
+				document.memForm.mem1212.src = "PICS/6win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 6 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+	if(picName==document.memForm.mem1212) {
+		if(numOfClicks<2) {
+			if(mem1212tmp==0 && mem1112win==0) {
+				picName.src = "PICS/6.png" ;
+				mem1212tmp=1;
+				numOfClicks++;
+				}
+			if(mem1111tmp==1 && mem1212tmp==1 && mem1112win==0) {
+				mem1112win=1;
+				document.memForm.mem1111.src = "PICS/6win.png" ;
+				document.memForm.mem1212.src = "PICS/6win.png" ;
+				numOfClicks++;
+				document.memForm.memMsg.value = "Couple 6 found!";
+				}
+			}
+		else {
+			flipAllBack();
+			}
+		if(mem12win==1&&mem34win==1&&mem56win==1&&mem78win==1&&mem910win==1&&mem1112win==1){document.memForm.memMsg.value = "Good game!";}
+	}
+}
+function resetMem() {
+	numOfClicks=0;
+	mem11tmp=0;
+	mem22tmp=0;
+	mem33tmp=0;
+	mem44tmp=0;
+	mem55tmp=0;
+	mem66tmp=0;
+	mem77tmp=0;
+	mem88tmp=0;
+	mem99tmp=0;
+	mem1010tmp=0;
+	mem1111tmp=0;
+	mem1212tmp=0;
+	mem12win=0;
+	mem34win=0;
+	mem56win=0;
+	mem78win=0;
+	mem910win=0;
+	mem1112win=0;
+	document.memForm.mem11.src = "PICS/backCard.png" ;
+	document.memForm.mem22.src = "PICS/backCard.png" ;
+	document.memForm.mem33.src = "PICS/backCard.png" ;
+	document.memForm.mem44.src = "PICS/backCard.png" ;
+	document.memForm.mem55.src = "PICS/backCard.png" ;
+	document.memForm.mem66.src = "PICS/backCard.png" ;
+	document.memForm.mem77.src = "PICS/backCard.png" ;
+	document.memForm.mem88.src = "PICS/backCard.png" ;
+	document.memForm.mem99.src = "PICS/backCard.png" ;
+	document.memForm.mem1010.src = "PICS/backCard.png" ;
+	document.memForm.mem1111.src = "PICS/backCard.png" ;
+	document.memForm.mem1212.src = "PICS/backCard.png" ;
+	document.memForm.memMsg.value = "Enjoy the game!";
+		
+}
+</script>
+</head>
+<body bgcolor="lightblue" onload="initAnimation();">
+<center><h1>האתר של גיא</h1></center><br>
+<marquee><font color="red"><h1>רותם אהובה - בדאלק שלי</h1></font></marquee><br><hr>
+<u>Today is:</u><br>
+<script language="javascript">
+y = setInterval ('makeClock();' ,1000) ;
+var thisDate = new Date () ;
+var month;
+month = thisDate.getMonth();
+month++;
+var year;
+year = thisDate.getYear();
+year += "9";
+year = year.substring(1, 3);
+var hour, minute, seconds;
+hour = thisDate.getHours();
+minute = thisDate.getMinutes();
+seconds = thisDate.getSeconds();
+document.write(thisDate.getDate() + "/");
+document.write(month + "/");
+document.write("20" + year);
+document.write("<br>");
+//document.write(hour + ":" + minute + ":" + seconds);
+//document.write("<br><br>");
+document.write("<form name='myForm2'>");
+document.write("<input type='text' name='date3' size='6' readonly='readonly'></form>");
+document.write("<br>");
+document.write("<b><u>לוח הכפל עד 10</u></b><br>");
+document.write("<br><table border='2'>");
+for(i=1;i<=10;i++){
+	document.write("<tr>");
+	for(j=1;j<=10;j++){
+		if(i==1 || j==1){document.write("<td align='center' bgcolor='white' onmouseover='this.style.bgColor='red'' onmouseout='this.style.bgColor='white''><b>" + i*j + "</b></td>");}
+		else{document.write("<td align='center' bgcolor='lightgray'>" + i*j + "</td>");}
+	}
+	document.write("</tr>");
+}
+document.write("</table><br><br>");
+
+</script>
+
+<form name="myForm">
+הכניסו צבע רקע כמילה באנגלית או כספרות ואותיות
+<br>
+<input type="text" name="bgRead" size="20">
+<input type="button" onclick="changeBG();" value="שנה צבע רקע">
+<input type="button" onclick="back2original();" value="צבע רקע מקורי">
+<input type="button" onclick="deleteBG();" value="מחק טקסט"><br><br>
+בחרו כינוי לרותם
+<br>
+<select name="names">
+<option value="אהבה">
+אהבה</option>
+<option value="חיים">
+חיים</option>
+<option value="בדאלק">
+בדאלק</option>
+<option value="עיוני">
+עיוני</option>
+<option value="אהובה">
+אהובה</option>
+<option value="יפה">
+יפה</option>
+<option value="נסיכה">
+נסיכה</option>
+<option value="כפרה">
+כפרה</option>
+<option value="עיניים">
+עיניים</option>
+<option value="דובשנית">
+דובשנית</option>
+<option value="עולם">
+עולם</option>
+<option value="יקום">
+יקום</option>
+<option value="תבל">
+תבל</option>
+<option value="מדהימה">
+מדהימה</option>
+<option value="מהממת">
+מהממת</option>
+<option value="מתוקה">
+מתוקה</option>
+<option value="חמודה">
+חמודה</option>
+<option value="אוהבת">
+אוהבת</option>
+<option value="חמה">
+חמה</option>
+<option value="חכמה">
+חכמה</option>
+<option value="חרוצה">
+חרוצה</option>
+<option value="לבבית">
+לבבית</option>
+<option value="חיונית">
+חיונית</option>
+<option value="אהבה נצחית">
+אהבה נצחית</option>
+<option value="אהבה טהורה">
+אהבה טהורה</option>
+<option value="אהבה עצומה">
+אהבה עצומה</option>
+<option value="אהבה נהדרת">
+אהבה נהדרת</option>
+<option value="אהבה נפלאה">
+אהבה נפלאה</option>
+<option value="אהבה מיוחדת">
+אהבה מיוחדת</option>
+<option value="אהבה מפתיעה">
+אהבה מפתיעה</option>
+<option value="אהבה צעירה">
+אהבה צעירה</option>
+<option value="אהבה נדירה">
+אהבה נדירה</option>
+<option value="אהבה חמודה">
+אהבה חמודה</option>
+<option value="אהבה נעימה">
+אהבה נעימה</option>
+<option value="אהבה מלטפת">
+אהבה מלטפת</option>
+</select>
+<input type="button" onclick="checkName();" value="בדוק בחירה"><br><br>
+הכניסו כתובת מייל תקנית
+<br>
+<input type="text" name="mailRead" size="30"><br>
+<input type="button" onclick="addDotCom();" value=".com">
+<input type="button" onclick="addDotCoIl();" value=".co.il">
+<input type="button" onclick="addShtrudel();" value="@"><br>
+<input type="button" onclick="checkMail();" value="בדוק כתובת">
+<input type="button" onclick="deleteMail();" value="מחק כתובת"><br><br>
+הכניסו תאריך לידה
+<br>
+<input type="button" onclick="checkBirthDate();" value="הצג גיל">
+<select name="birthYear">
+<option value=1960>1960</option><option value=1961>1961</option>
+<option value=1962>1962</option><option value=1963>1963</option>
+<option value=1964>1964</option><option value=1965>1965</option>
+<option value=1966>1966</option><option value=1967>1967</option>
+<option value=1968>1968</option><option value=1969>1969</option>
+<option value=1970>1970</option><option value=1971>1971</option>
+<option value=1972>1972</option><option value=1973>1973</option>
+<option value=1974>1974</option><option value=1975>1975</option>
+<option value=1976>1976</option><option value=1977>1977</option>
+<option value=1978>1978</option><option value=1979>1979</option>
+<option value=1980>1980</option><option value=1981>1981</option>
+<option value="1982">1982</option>
+<option value="1983">1983</option><option value="1984">1984</option>
+<option value="1985">1985</option><option value="1986">1986</option>
+<option value="1987">1987</option><option value="1988">1988</option>
+<option value="1989">1989</option><option value="1990">1990</option>
+<option value="1991">1991</option><option value="1992">1992</option>
+<option value="1993">1993</option><option value="1994">1994</option>
+<option value="1995">1995</option><option value="1996">1996</option>
+<option value="1997">1997</option><option value="1998">1998</option>
+<option value="1999">1999</option><option value="2000">2000</option>
+<option value="2001">2001</option><option value="2002">2002</option>
+<option value="2003">2003</option><option value="2004">2004</option>
+<option value="2005">2005</option><option value="2006">2006</option>
+<option value="2007">2007</option><option value="2008">2008</option>
+<option value="2009">2009</option><option value="2010">2010</option>
+<option value=2011>2011</option><option value=2012>2012</option>
+<option value=2013>2013</option><option value=2014>2014</option>
+<option value=2015>2015</option><option value=2016>2016</option>
+<option value=2017>2017</option><option value=2018>2018</option>
+</select>
+<select name="birthMonth">
+<option value="1">
+ינואר</option>
+<option value="2">
+פברואר</option>
+<option value="3">
+מרץ</option>
+<option value="4">
+אפריל</option>
+<option value="5">
+מאי</option>
+<option value="6">
+יוני</option>
+<option value="7">
+יולי</option>
+<option value="8">
+אוגוסט</option>
+<option value="9">
+ספטמבר</option>
+<option value="10">
+אוקטובר</option>
+<option value="11">
+נובמבר</option>
+<option value="12">
+דצמבר</option>
+<option value="1">January</option><option value="2">February</option>
+<option value="3">March</option><option value="4">April</option>
+<option value="5">May</option><option value="6">June</option>
+<option value="7">July</option><option value="8">August</option>
+<option value="9">September</option><option value="10">October</option>
+<option value="11">November</option><option value="12">December</option>
+</select>
+<select name="birthDay">
+<option value="1">1</option><option value="2">2</option>
+<option value="3">3</option><option value="4">4</option>
+<option value="5">5</option><option value="6">6</option>
+<option value="7">7</option><option value="8">8</option>
+<option value="9">9</option><option value="10">10</option>
+<option value="11">11</option><option value="12">12</option>
+<option value="13">13</option><option value="14">14</option>
+<option value="15">15</option><option value="16">16</option>
+<option value="17">17</option><option value="18">18</option>
+<option value="19">19</option><option value="20">20</option>
+<option value="21">21</option><option value="22">22</option>
+<option value="23">23</option><option value="24">24</option>
+<option value="25">25</option><option value="26">26</option>
+<option value="27">27</option><option value="28">28</option>
+<option value="29">29</option><option value="30">30</option>
+<option value="31">31</option>
+</select>
+<br><br>
+הקלידו סיסמא
+<br>
+<input type="password"><br><br>
+סמנו אם רותם אהובה:
+<input type="checkbox" value="checkbox"><br>
+סמנו אם רותם חמודה:
+<input type="checkbox" value="checkbox"><br>
+סמנו אם רותם מגניבה:
+<input type="checkbox" value="checkbox"><br><br>
+דרגו בין 0 ל- 100 כמה אתם אוהבים את רותם:
+<br>
+<input type="range">
+<br>
+כתבו פה מכתב אהבה
+<br>
+<textarea rows="4" cols="50"></textarea>
+<br><br>
+<img name="lovePic" src="PICS/1.png" /><br>
+<input type="button" onclick="aniStop();" value="עצור אנימציה">
+<input type="button" onclick="initAnimation();" value="המשך אנימציה">
+<br><br>
+שחקו במשחק הזיכרון
+<br><br>
+<img name="mem1" src="PICS/backCard.png" onclick="memAct1(this);" />
+<img name="mem2" src="PICS/backCard.png" onclick="memAct2(this);" />
+<img name="mem3" src="PICS/backCard.png" onclick="memAct3(this);" /><br>
+<img name="mem4" src="PICS/backCard.png" onclick="memAct4(this);" />
+<img name="mem5" src="PICS/backCard.png" onclick="memAct5(this);" />
+<img name="mem6" src="PICS/backCard.png" onclick="memAct6(this);" />
+<br><br>
+<hr>
+<img name="marvel" src="PICS/marvel.png" onmouseover="this.src='PICS/marvel2.png'" onmouseout="this.src='PICS/marvel.png'" onmousedown="shieldAccess(this);" onmouseup="this.src='PICS/marvel2.png'"><br>
+צפו בפתיח החדש והמדהים של מארוול
+<br>
+<a href="https://www.youtube.com/watch?v=tXRJ7ozUJb0" target="_blank">Marvel Studios - the new logo 2016</a><br>
+הפתיח של ספיידרמן: השיבה הביתה
+<br>
+<a href="https://www.youtube.com/watch?v=Z-2SYlv2YFU" target="_blank">Spider Man Homecoming intro official Blu-Ray HD</a><br>
+הפתיח הקודם
+<br>
+<a href="https://www.youtube.com/watch?v=a1vWUe83LsQ" target="_blank">Marvel Studios - Intro|Logo: New Version (2013)</a><br>
+<h3><u>טריילרים חדשים</u></h3>
+<a href="https://www.youtube.com/watch?v=xjDjIWPwcPU" target="_blank">Marvel Studios' Black Panther - Official Trailer</a><br><br>
+<a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" target="_blank">Marvel Studios' Avengers: Infinity War Official Trailer</a><br>
+<br><u>S.H.I.E.L.D. - Enter an agent name:</u><br><br>
+<input type="text" name="agentRead" size="30">
+<input type="button" onclick="checkAgent();" value="Check clearence"><br><br>
+<img name="marvel2" src="PICS/p1.jpg" height="200" width="200"><br><br>
+<img name="marvel3" src="PICS/p2.jpg" height="200" width="350"><br><br>
+<u><h2>ענו על חידון מארוול</h2></u>
+<br>
+<u>Q1: What is the real name of <b>Falcon</b>?</u>
+<br><br>
+<input type="radio" name="q1" value="Wrong">Nick Fury<br>
+<input type="radio" name="q1" value="Wrong">Steve Rogers<br>
+<input type="radio" name="q1" value="Correct">Sam Wilson<br>
+<input type="radio" name="q1" value="Wrong">Tony Stark<br><br>
+<u>Q2: <b>Bucky Barnes</b> is also known as...</u>
+<br><br>
+<input type="radio" name="q2" value="Correct">Winter Soldier<br>
+<input type="radio" name="q2" value="Wrong">Iron Man<br>
+<input type="radio" name="q2" value="Wrong">The Incredible Hulk<br>
+<input type="radio" name="q2" value="Wrong">Iron Patriot<br><br>
+<u>Q3: What is the real name of <b>Scarlet Witch</b>?</u>
+<br><br>
+<input type="radio" name="q3" value="Wrong">Sharon Carter<br>
+<input type="radio" name="q3" value="Wrong">Yelena Belova<br>
+<input type="radio" name="q3" value="Wrong">Natasha Romanoff<br>
+<input type="radio" name="q3" value="Correct">Wanda Maximoff<br><br>
+<u>Q4: What is the real name of <b>Hawkeye</b>?</u>
+<br><br>
+<input type="radio" name="q4" value="Wrong">Tim Barton<br>
+<input type="radio" name="q4" value="Correct">Clint Barton<br>
+<input type="radio" name="q4" value="Wrong">Flint Barton<br>
+<input type="radio" name="q4" value="Wrong">Frank Barton<br><br>
+<u>Q5: In what year the film <b>Captain America: Civil War</b> was released?</u>
+<br><br>
+<input type="radio" name="q5" value="Wrong">2014<br>
+<input type="radio" name="q5" value="Wrong">2015<br>
+<input type="radio" name="q5" value="Correct">2016<br>
+<input type="radio" name="q5" value="Wrong">2017<br><br>
+<u>Q6: Who of the following is <b>NOT</b> called a <b>Dr. (Doctor)</b> before his name?</u>
+<br><br>
+<input type="radio" name="q6" value="Wrong">Bruce Banner<br>
+<input type="radio" name="q6" value="Wrong">Stephen Vincent Strange<br>
+<input type="radio" name="q6" value="Wrong">Otto Octavius (Octopus)<br>
+<input type="radio" name="q6" value="Correct">Charles Xavier<br><br>
+<u>Q7: Which of the following describes best <b>William Stryker</b>? (X-Men)</u>
+<br><br>
+<input type="radio" name="q7" value="Wrong">Colonel<br>
+<input type="radio" name="q7" value="Wrong">Scientist<br>
+<input type="radio" name="q7" value="Wrong">Mutant hater<br>
+<input type="radio" name="q7" value="Correct">All answers are correct<br><br>
+<u>Q8: <b>Dr. Curt Connors</b> is also known as... (Spider-Man)</u>
+<br><br>
+<input type="radio" name="q8" value="Wrong">Scorpion<br>
+<input type="radio" name="q8" value="Wrong">Rhino<br>
+<input type="radio" name="q8" value="Correct">Lizard<br>
+<input type="radio" name="q8" value="Wrong">Vulture<br><br>
+<u>Q9: What is the name of <b>Doctor Strange</b>'s <b>master</b>?</u>
+<br><br>
+<input type="radio" name="q9" value="Correct">The Ancient One<br>
+<input type="radio" name="q9" value="Wrong">The Old One<br>
+<input type="radio" name="q9" value="Wrong">The Wise One<br>
+<input type="radio" name="q9" value="Wrong">The Mighty One<br><br>
+<u>Q10: <b>Daredevil (Matthew Michael Murdock)</b> works as a...</u>
+<br><br>
+<input type="radio" name="q10" value="Wrong">Boxer<br>
+<input type="radio" name="q10" value="Correct">Lawyer<br>
+<input type="radio" name="q10" value="Wrong">Doctor<br>
+<input type="radio" name="q10" value="Wrong">Reporter<br><br>
+<u>Q11: At the beginning of the film <b>Captain America: Civil War</b>,<br>
+where do Captain America, Scarlet Witch, Falcon and Black Widow fight <b>Crossbones (Brock Rumlow)</b>?</u>
+<br><br>
+<input type="radio" name="q11" value="Wrong">Sokovia<br>
+<input type="radio" name="q11" value="Wrong">Wakanda<br>
+<input type="radio" name="q11" value="Wrong">South Africa<br>
+<input type="radio" name="q11" value="Correct">Lagos<br><br>
+<u>Q12: Who is the <b>twin brother</b> of <b>Scarlet Witch</b>?</u>
+<br><br>
+<input type="radio" name="q12" value="Wrong">Silver Surfer<br>
+<input type="radio" name="q12" value="Wrong">Silver Knight<br>
+<input type="radio" name="q12" value="Wrong">Silver Star<br>
+<input type="radio" name="q12" value="Correct">Quicksilver<br><br>
+<u>Q13: <b>Obadiah Stane</b> is also known as... (Iron Man)</u>
+<br><br>
+<input type="radio" name="q13" value="Wrong">Iron Fist<br>
+<input type="radio" name="q13" value="Wrong">Iron Man<br>
+<input type="radio" name="q13" value="Correct">Iron Monger<br>
+<input type="radio" name="q13" value="Wrong">Iron Patriot<br><br>
+<u>Q14: <b>Colonel James Rupert Rhodes</b> was also known as...</u>
+<br><br>
+<input type="radio" name="q14" value="Wrong">Iron Fist<br>
+<input type="radio" name="q14" value="Wrong">Iron Man<br>
+<input type="radio" name="q14" value="Wrong">Iron Monger<br>
+<input type="radio" name="q14" value="Correct">Iron Patriot<br><br>
+<u>Q15: <b>Colonel James Rupert Rhodes</b> serves in the... (Iron Man)</u>
+<br><br>
+<input type="radio" name="q15" value="Wrong">U.S. Navy<br>
+<input type="radio" name="q15" value="Correct">U.S. Air Force<br>
+<input type="radio" name="q15" value="Wrong">U.S. Marine Corps<br>
+<input type="radio" name="q15" value="Wrong">U.S. Army Rangers<br><br>
+<u>Q16: Which <b>organization</b> abducted <b>Tony Stark</b>? (Iron Man)</u>
+<br><br>
+<input type="radio" name="q16" value="Correct">Ten Rings<br>
+<input type="radio" name="q16" value="Wrong">Ten Swords<br>
+<input type="radio" name="q16" value="Wrong">Ten Knives<br>
+<input type="radio" name="q16" value="Wrong">Ten Knights<br><br>
+<u>Q17: Which <b>missile</b> did <b>Tony Stark</b> demonstrate to
+the U.S. soldiers in <b>Afghanistan</b>? (Iron Man)</u>
+<br><br>
+<input type="radio" name="q17" value="Wrong">Patriot<br>
+<input type="radio" name="q17" value="Correct">Jericho<br>
+<input type="radio" name="q17" value="Wrong">Freedom<br>
+<input type="radio" name="q17" value="Wrong">Arrow<br><br>
+<u>Q18: Which <b>organization</b> wanted to debrief <b>Tony Stark</b> after
+he escaped captivity? (Iron Man)</u>
+<br><br>
+<input type="radio" name="q18" value="Correct">S.H.I.E.L.D.<br>
+<input type="radio" name="q18" value="Wrong">S.W.O.R.D.<br>
+<input type="radio" name="q18" value="Wrong">A.I.M.<br>
+<input type="radio" name="q18" value="Wrong">G.U.A.R.D.<br><br>
+<u>Q19: <b>Thor's kingdom</b> is also known as...</u>
+<br><br>
+<input type="radio" name="q19" value="Wrong">Midgard<br>
+<input type="radio" name="q19" value="Correct">Asgard<br>
+<input type="radio" name="q19" value="Wrong">Vangard<br>
+<input type="radio" name="q19" value="Wrong">Argard<br><br>
+<u>Q20: <b>Planet Earth</b> is also known as...</u>
+<br><br>
+<input type="radio" name="q20" value="Correct">Midgard<br>
+<input type="radio" name="q20" value="Wrong">Asgard<br>
+<input type="radio" name="q20" value="Wrong">Vangard<br>
+<input type="radio" name="q20" value="Wrong">Argard<br><br>
+<u>Q21: What is the name of <b>S.H.I.E.L.D.'s headquarters</b>? (Captain America: The Winter Soldier)</u>
+<br><br>
+<input type="radio" name="q21" value="Wrong">The Trident<br>
+<input type="radio" name="q21" value="Wrong">The Triangle<br>
+<input type="radio" name="q21" value="Wrong">The Trinisphere<br>
+<input type="radio" name="q21" value="Correct">The Triskelion<br><br>
+<u>Q22: What is the name of <b>the project</b> that <b>Nick Fury</b> shows to <b>Captain America</b>? (Captain America: The Winter Soldier)</u>
+<br><br>
+<input type="radio" name="q22" value="Wrong">Project Rebirth<br>
+<input type="radio" name="q22" value="Wrong">Project Deathlok<br>
+<input type="radio" name="q22" value="Correct">Project Insight<br>
+<input type="radio" name="q22" value="Wrong">Project Distant Star Return<br><br>
+<u>Q23: At the <b>Battle of New York</b>, what does <b>Tony Stark</b> want to eat? (The Avengers)</u>
+<br><br>
+<input type="radio" name="q23" value="Correct">Shawarma<br>
+<input type="radio" name="q23" value="Wrong">Falafel<br>
+<input type="radio" name="q23" value="Wrong">Hummus<br>
+<input type="radio" name="q23" value="Wrong">Kabab<br><br>
+<u>Q24: Who of the following has <b>NOT</b> worked for <b>HYDRA</b>?</u>
+<br><br>
+<input type="radio" name="q24" value="Wrong">Alexander Pierce<br>
+<input type="radio" name="q24" value="Correct">Phil Coulson<br>
+<input type="radio" name="q24" value="Wrong">Jasper Sitwell<br>
+<input type="radio" name="q24" value="Wrong">Brock Rumlow<br><br>
+<u>Q25: At the <b>Battle of Sokovia</b>, who did <b>NOT</b> participate? (Avengers: Age of Ultron)</u>
+<br><br>
+<input type="radio" name="q25" value="Wrong">Hawkeye<br>
+<input type="radio" name="q25" value="Wrong">Iron Man<br>
+<input type="radio" name="q25" value="Wrong">War Machine<br>
+<input type="radio" name="q25" value="Correct">Falcon<br><br>
+<u>Q26: At the <b>Battle of Sokovia</b>, who was the <b>last</b> to come and fight? (Avengers: Age of Ultron)</u>
+<br><br>
+<input type="radio" name="q26" value="Wrong">Hawkeye<br>
+<input type="radio" name="q26" value="Wrong">Iron Man<br>
+<input type="radio" name="q26" value="Correct">War Machine<br>
+<input type="radio" name="q26" value="Wrong">Falcon<br><br>
+<u>Q27: Who replced <b>J.A.R.V.I.S.</b> to assist Tony Stark? (Avengers: Age of Ultron)</u>
+<br><br>
+<input type="radio" name="q27" value="Wrong">S.U.N.D.A.Y.<br>
+<input type="radio" name="q27" value="Wrong">M.O.N.D.A.Y.<br>
+<input type="radio" name="q27" value="Correct">F.R.I.D.A.Y.<br>
+<input type="radio" name="q27" value="Wrong">S.A.T.U.R.D.A.Y.<br><br>
+<u>Q28: <b>Just</b> before the <b>Battle of Sokovia</b>,<br>
+where do Captain America, Scarlet Witch, Quicksilver, Hawkeye and Black Widow fight <b>Ultron</b>? (Avengers: Age of Ultron)</u>
+<br><br>
+<input type="radio" name="q28" value="Correct">Seoul<br>
+<input type="radio" name="q28" value="Wrong">Johannesburg<br>
+<input type="radio" name="q28" value="Wrong">Hong Kong<br>
+<input type="radio" name="q28" value="Wrong">Oslo<br><br>
+<u>Q29: What is the name of Sam Wilson's <b>little flying robot</b>? (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q29" value="Wrong">Bluewing<br>
+<input type="radio" name="q29" value="Correct">Redwing<br>
+<input type="radio" name="q29" value="Wrong">Blackwing<br>
+<input type="radio" name="q29" value="Wrong">Whitewing<br><br>
+<u>Q30: <b>Crossbones (Brock Rumlow)</b> tells Captain America that his buyer (Rumlow's) is... (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q30" value="Wrong">Nick Fury<br>
+<input type="radio" name="q30" value="Wrong">Tony Stark<br>
+<input type="radio" name="q30" value="Wrong">Colonel James Rupert Rhodes<br>
+<input type="radio" name="q30" value="Correct">Bucky Barnes<br><br>
+<u>Q31: Who were the <b>first three</b> to attack the <b>Winter Soldier</b>? (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q31" value="Wrong">Captain America, Iron man, Black Panther<br>
+<input type="radio" name="q31" value="Correct">Captain America, Falcon, Black Panther<br>
+<input type="radio" name="q31" value="Wrong">Captain America, War Machine, Black Panther<br>
+<input type="radio" name="q31" value="Wrong">Captain America, Black Widow, Black Panther<br><br>
+<u>Q32: Who gave a <b>speech (eulogy)</b> in <b>Peggy Carter's funeral</b>? (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q32" value="Wrong">Steve Rogers<br>
+<input type="radio" name="q32" value="Wrong">Sam Wilson<br>
+<input type="radio" name="q32" value="Correct">Sharon Carter<br>
+<input type="radio" name="q32" value="Wrong">Natasha Romanoff<br><br>
+<u>Q33: At the airport fight, who accidentally <b>got shot by Vision</b> and <b>fell from a high distance</b>? (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q33" value="Correct">War Machine<br>
+<input type="radio" name="q33" value="Wrong">Iron Man<br>
+<input type="radio" name="q33" value="Wrong">Falcon<br>
+<input type="radio" name="q33" value="Wrong">Captain America<br><br>
+<u>Q34: Bucky tells Steve that <b>Steve's mom's name</b> was... (Captain America: Civil War)</u>
+<br><br>
+<input type="radio" name="q34" value="Correct">Sarah<br>
+<input type="radio" name="q34" value="Wrong">Rebecca<br>
+<input type="radio" name="q34" value="Wrong">Rachel<br>
+<input type="radio" name="q34" value="Wrong">Leah<br><br>
+<u>Q35: How many people <b>challenged T'Challa and fought with him</b> in order to win the crown? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q35" value="Wrong">1<br>
+<input type="radio" name="q35" value="Correct">2<br>
+<input type="radio" name="q35" value="Wrong">3<br>
+<input type="radio" name="q35" value="Wrong">4<br><br>
+<u>Q36: Who in <b>Wakanda</b> is <b>in charge of the weaponry, its R&D and technology</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q36" value="Wrong">T'Challa's father<br>
+<input type="radio" name="q36" value="Wrong">T'Challa's mother<br>
+<input type="radio" name="q36" value="Wrong">T'Challa's brother<br>
+<input type="radio" name="q36" value="Correct">T'Challa's sister<br><br>
+<u>Q37: Who in <b>Wakanda</b> is <b>head of security</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q37" value="Wrong">Badu<br>
+<input type="radio" name="q37" value="Wrong">Zuri<br>
+<input type="radio" name="q37" value="Correct">W'Kabi<br>
+<input type="radio" name="q37" value="Wrong">Shuri<br><br>
+<u>Q38: Who in <b>Wakanda</b> is the <b>shaman and the trusted loyal adviser to the king</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q38" value="Wrong">Badu<br>
+<input type="radio" name="q38" value="Correct">Zuri<br>
+<input type="radio" name="q38" value="Wrong">W'Kabi<br>
+<input type="radio" name="q38" value="Wrong">Shuri<br><br>
+<u>Q39: Where <b>Star-Lord</b> first met <b>Drax</b>? (Guardians of the Galaxy)</u>
+<br><br>
+<input type="radio" name="q39" value="Correct">Prison<br>
+<input type="radio" name="q39" value="Wrong">Hospital<br>
+<input type="radio" name="q39" value="Wrong">Xandar<br>
+<input type="radio" name="q39" value="Wrong">Earth<br><br>
+<u>Q40: Who first called <b>Star-Lord, Drax, Groot, Gamora and Rocket Raccoon</b>: <b>"Guardians of the Galaxy"</b>? (Guardians of the Galaxy)</u>
+<br><br>
+<input type="radio" name="q40" value="Wrong">Thanos<br>
+<input type="radio" name="q40" value="Correct">Ronan<br>
+<input type="radio" name="q40" value="Wrong">Yondu<br>
+<input type="radio" name="q40" value="Wrong">Nebula<br><br>
+<u>Q41: Where <b>Star-Lord</b> first met <b>Gamora</b>? (Guardians of the Galaxy)</u>
+<br><br>
+<input type="radio" name="q41" value="Wrong">Prison<br>
+<input type="radio" name="q41" value="Wrong">Hospital<br>
+<input type="radio" name="q41" value="Correct">Xandar<br>
+<input type="radio" name="q41" value="Wrong">Earth<br><br>
+<u>Q42: Where <b>Star-Lord</b> first met <b>Groot and Rocket Raccoon</b>? (Guardians of the Galaxy)</u>
+<br><br>
+<input type="radio" name="q42" value="Wrong">Prison<br>
+<input type="radio" name="q42" value="Wrong">Hospital<br>
+<input type="radio" name="q42" value="Correct">Xandar<br>
+<input type="radio" name="q42" value="Wrong">Earth<br><br>
+<u>Q43: <b>W'Kabi</b> belongs to which <b>tribe</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q43" value="Wrong">Mining Tribe<br>
+<input type="radio" name="q43" value="Wrong">Merchant Tribe<br>
+<input type="radio" name="q43" value="Wrong">River Tribe<br>
+<input type="radio" name="q43" value="Correct">Border Tribe<br><br>
+<u>Q44: Who killed <b>Ulysses Klaue</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q44" value="Wrong">W'Kabi<br>
+<input type="radio" name="q44" value="Wrong">T'Challa<br>
+<input type="radio" name="q44" value="Wrong">T'Chaka<br>
+<input type="radio" name="q44" value="Correct">Erik Killmonger<br><br>
+<u>Q45: Who killed <b>Zuri</b>? (Black Panther)</u>
+<br><br>
+<input type="radio" name="q45" value="Wrong">W'Kabi<br>
+<input type="radio" name="q45" value="Wrong">T'Challa<br>
+<input type="radio" name="q45" value="Wrong">T'Chaka<br>
+<input type="radio" name="q45" value="Correct">Erik Killmonger<br><br>
+
+
+<input type="button" onclick="marvelCh();" value="בדוק תשובות"><br><br>
+</form>
+<br><hr>
+<script language="javascript">
+document.write("<br><table border='1'>");
+for(i=1;i<=10;i++){
+	document.write("<tr>");
+	for(j=1;j<=10;j++){
+		document.write("<td size='20' bgcolor='navy'></td>");
+	}
+	document.write("</tr>");
+}
+document.write("</table><br>");
+</script>
+<marquee behavior="alternate"><font color="midnightblue" size="38">בוניב אתה חמוד ותותח</div></font></marquee>
+<br><br>
+<font color="purple" size="34">
+<div id="nadav" onmouseover="this.style.fontSize=44" onmouseout="this.style.fontSize=34">
+Hawkeye is awsome!!!
+</div></font>
+<br><br>
+<form name="memForm">
+<br><br>
+שחקו במשחק הזיכרון
+<br><br>
+<input type="text" name="memMsg" size="16" readonly="readonly" value="Enjoy the game!">
+<br><br>
+<input type="button" onclick="resetMem();" value="Reset Game">
+<br><br><br>
+<img name="mem99" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem11" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem1111" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem44" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/><br>
+<img name="mem55" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem33" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem88" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem1212" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/><br>
+<img name="mem22" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem1010" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem66" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<img name="mem77" src="PICS/backCard.png" onclick="memNew(this);" height="130" width="130"/>
+<br><br>
+<br><br><br><br>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
