@@ -31,7 +31,7 @@ function changeBG () {
 	if(newBG != "black" && newBG != "" && newBG != "000000"){
 		document.bgColor=newBG;}
 	else{
-		window.alert("ΰρεψ μδχμιγ φας ωηεψ ΰε μδωΰιψ ψιχ");}
+		window.alert("Γ Γ±Γ¥ΓΈ Γ¬Γ¤Γ·Γ¬Γ©Γ£ Γ¶Γ΅Γ² ΓΉΓ§Γ¥ΓΈ Γ Γ¥ Γ¬Γ¤ΓΉΓ Γ©ΓΈ ΓΈΓ©Γ·");}
 		document.myForm.bgRead.focus();
 	}
 function back2original () {document.bgColor="lightblue";}
@@ -43,7 +43,7 @@ function checkName() {
 	sltIndex = document.myForm.names.selectedIndex ;
 	sltValue = document.myForm.names.options[sltIndex].value ;
 	msg = "" ;
-	msg += "πλεο ξΰεγ!!! ψεϊν διΰ ΰλο" ;
+	msg += "Γ°Γ«Γ¥Γ― Γ®Γ Γ¥Γ£!!! ΓΈΓ¥ΓΊΓ­ Γ¤Γ©Γ  Γ Γ«Γ―" ;
 	msg += " " + sltValue ;
 	alert(msg);
 	}
@@ -58,9 +58,9 @@ function checkMail() {
 	//for(i=0;i<splitMail2.length;i++){
 		//if(splitMail2[i] == ""){mailCounter=1;}
 		//}   // && mailCounter==0
-	if (mailAdd.indexOf("@") != -1 && mailAdd.indexOf(".") > 0 && mailAdd.indexOf("@") > 0){alert("δλϊεαϊ ϊχιπδ");}
+	if (mailAdd.indexOf("@") != -1 && mailAdd.indexOf(".") > 0 && mailAdd.indexOf("@") > 0){alert("Γ¤Γ«ΓΊΓ¥Γ΅ΓΊ ΓΊΓ·Γ©Γ°Γ¤");}
 	else {
-		alert("δλϊεαϊ ωβειδ. ιω μλϊεα μτηεϊ @ ΰηγ επχεγδ ΰηϊ");
+		alert("Γ¤Γ«ΓΊΓ¥Γ΅ΓΊ ΓΉΓΆΓ¥Γ©Γ¤. Γ©ΓΉ Γ¬Γ«ΓΊΓ¥Γ΅ Γ¬Γ΄Γ§Γ¥ΓΊ @ Γ Γ§Γ£ Γ¥Γ°Γ·Γ¥Γ£Γ¤ Γ Γ§ΓΊ");
 		document.myForm.mailRead.focus();
 		}
 	}
@@ -830,8 +830,8 @@ function resetMem() {
 </script>
 </head>
 <body bgcolor="lightblue" onload="initAnimation();">
-<center><h1>δΰϊψ ωμ βιΰ</h1></center><br>
-<marquee><font color="red"><h1>ψεϊν ΰδεαδ - αγΰμχ ωμι</h1></font></marquee><br><hr>
+<center><h1>Γ¤Γ ΓΊΓΈ ΓΉΓ¬ ΓΆΓ©Γ </h1></center><br>
+<marquee><font color="red"><h1>ΓΈΓ¥ΓΊΓ­ Γ Γ¤Γ¥Γ΅Γ¤ - Γ΅Γ£Γ Γ¬Γ· ΓΉΓ¬Γ©</h1></font></marquee><br><hr>
 <u>Today is:</u><br>
 <script language="javascript">
 y = setInterval ('makeClock();' ,1000) ;
@@ -856,7 +856,7 @@ document.write("<br>");
 document.write("<form name='myForm2'>");
 document.write("<input type='text' name='date3' size='6' readonly='readonly'></form>");
 document.write("<br>");
-document.write("<b><u>μεη δλτμ ςγ 10</u></b><br>");
+document.write("<b><u>Γ¬Γ¥Γ§ Γ¤Γ«Γ΄Γ¬ Γ²Γ£ 10</u></b><br>");
 document.write("<br><table border='2'>");
 for(i=1;i<=10;i++){
 	document.write("<tr>");
@@ -871,98 +871,98 @@ document.write("</table><br><br>");
 </script>
 
 <form name="myForm">
-δλπιρε φας ψχς λξιμδ αΰπβμιϊ ΰε λρτψεϊ εΰεϊιεϊ
+Γ¤Γ«Γ°Γ©Γ±Γ¥ Γ¶Γ΅Γ² ΓΈΓ·Γ² Γ«Γ®Γ©Γ¬Γ¤ Γ΅Γ Γ°ΓΆΓ¬Γ©ΓΊ Γ Γ¥ Γ«Γ±Γ΄ΓΈΓ¥ΓΊ Γ¥Γ Γ¥ΓΊΓ©Γ¥ΓΊ
 <br>
 <input type="text" name="bgRead" size="20">
-<input type="button" onclick="changeBG();" value="ωπδ φας ψχς">
-<input type="button" onclick="back2original();" value="φας ψχς ξχεψι">
-<input type="button" onclick="deleteBG();" value="ξηχ θχρθ"><br><br>
-αηψε λιπει μψεϊν
+<input type="button" onclick="changeBG();" value="ΓΉΓ°Γ¤ Γ¶Γ΅Γ² ΓΈΓ·Γ²">
+<input type="button" onclick="back2original();" value="Γ¶Γ΅Γ² ΓΈΓ·Γ² Γ®Γ·Γ¥ΓΈΓ©">
+<input type="button" onclick="deleteBG();" value="Γ®Γ§Γ· Γ¨Γ·Γ±Γ¨"><br><br>
+Γ΅Γ§ΓΈΓ¥ Γ«Γ©Γ°Γ¥Γ© Γ¬ΓΈΓ¥ΓΊΓ­
 <br>
 <select name="names">
-<option value="ΰδαδ">
-ΰδαδ</option>
-<option value="ηιιν">
-ηιιν</option>
-<option value="αγΰμχ">
-αγΰμχ</option>
-<option value="ςιεπι">
-ςιεπι</option>
-<option value="ΰδεαδ">
-ΰδεαδ</option>
-<option value="ιτδ">
-ιτδ</option>
-<option value="πριλδ">
-πριλδ</option>
-<option value="λτψδ">
-λτψδ</option>
-<option value="ςιπιιν">
-ςιπιιν</option>
-<option value="γεαωπιϊ">
-γεαωπιϊ</option>
-<option value="ςεμν">
-ςεμν</option>
-<option value="ιχεν">
-ιχεν</option>
-<option value="ϊαμ">
-ϊαμ</option>
-<option value="ξγδιξδ">
-ξγδιξδ</option>
-<option value="ξδξξϊ">
-ξδξξϊ</option>
-<option value="ξϊεχδ">
-ξϊεχδ</option>
-<option value="ηξεγδ">
-ηξεγδ</option>
-<option value="ΰεδαϊ">
-ΰεδαϊ</option>
-<option value="ηξδ">
-ηξδ</option>
-<option value="ηλξδ">
-ηλξδ</option>
-<option value="ηψεφδ">
-ηψεφδ</option>
-<option value="μααιϊ">
-μααιϊ</option>
-<option value="ηιεπιϊ">
-ηιεπιϊ</option>
-<option value="ΰδαδ πφηιϊ">
-ΰδαδ πφηιϊ</option>
-<option value="ΰδαδ θδεψδ">
-ΰδαδ θδεψδ</option>
-<option value="ΰδαδ ςφεξδ">
-ΰδαδ ςφεξδ</option>
-<option value="ΰδαδ πδγψϊ">
-ΰδαδ πδγψϊ</option>
-<option value="ΰδαδ πτμΰδ">
-ΰδαδ πτμΰδ</option>
-<option value="ΰδαδ ξιεηγϊ">
-ΰδαδ ξιεηγϊ</option>
-<option value="ΰδαδ ξτϊιςδ">
-ΰδαδ ξτϊιςδ</option>
-<option value="ΰδαδ φςιψδ">
-ΰδαδ φςιψδ</option>
-<option value="ΰδαδ πγιψδ">
-ΰδαδ πγιψδ</option>
-<option value="ΰδαδ ηξεγδ">
-ΰδαδ ηξεγδ</option>
-<option value="ΰδαδ πςιξδ">
-ΰδαδ πςιξδ</option>
-<option value="ΰδαδ ξμθτϊ">
-ΰδαδ ξμθτϊ</option>
+<option value="Γ Γ¤Γ΅Γ¤">
+Γ Γ¤Γ΅Γ¤</option>
+<option value="Γ§Γ©Γ©Γ­">
+Γ§Γ©Γ©Γ­</option>
+<option value="Γ΅Γ£Γ Γ¬Γ·">
+Γ΅Γ£Γ Γ¬Γ·</option>
+<option value="Γ²Γ©Γ¥Γ°Γ©">
+Γ²Γ©Γ¥Γ°Γ©</option>
+<option value="Γ Γ¤Γ¥Γ΅Γ¤">
+Γ Γ¤Γ¥Γ΅Γ¤</option>
+<option value="Γ©Γ΄Γ¤">
+Γ©Γ΄Γ¤</option>
+<option value="Γ°Γ±Γ©Γ«Γ¤">
+Γ°Γ±Γ©Γ«Γ¤</option>
+<option value="Γ«Γ΄ΓΈΓ¤">
+Γ«Γ΄ΓΈΓ¤</option>
+<option value="Γ²Γ©Γ°Γ©Γ©Γ­">
+Γ²Γ©Γ°Γ©Γ©Γ­</option>
+<option value="Γ£Γ¥Γ΅ΓΉΓ°Γ©ΓΊ">
+Γ£Γ¥Γ΅ΓΉΓ°Γ©ΓΊ</option>
+<option value="Γ²Γ¥Γ¬Γ­">
+Γ²Γ¥Γ¬Γ­</option>
+<option value="Γ©Γ·Γ¥Γ­">
+Γ©Γ·Γ¥Γ­</option>
+<option value="ΓΊΓ΅Γ¬">
+ΓΊΓ΅Γ¬</option>
+<option value="Γ®Γ£Γ¤Γ©Γ®Γ¤">
+Γ®Γ£Γ¤Γ©Γ®Γ¤</option>
+<option value="Γ®Γ¤Γ®Γ®ΓΊ">
+Γ®Γ¤Γ®Γ®ΓΊ</option>
+<option value="Γ®ΓΊΓ¥Γ·Γ¤">
+Γ®ΓΊΓ¥Γ·Γ¤</option>
+<option value="Γ§Γ®Γ¥Γ£Γ¤">
+Γ§Γ®Γ¥Γ£Γ¤</option>
+<option value="Γ Γ¥Γ¤Γ΅ΓΊ">
+Γ Γ¥Γ¤Γ΅ΓΊ</option>
+<option value="Γ§Γ®Γ¤">
+Γ§Γ®Γ¤</option>
+<option value="Γ§Γ«Γ®Γ¤">
+Γ§Γ«Γ®Γ¤</option>
+<option value="Γ§ΓΈΓ¥Γ¶Γ¤">
+Γ§ΓΈΓ¥Γ¶Γ¤</option>
+<option value="Γ¬Γ΅Γ΅Γ©ΓΊ">
+Γ¬Γ΅Γ΅Γ©ΓΊ</option>
+<option value="Γ§Γ©Γ¥Γ°Γ©ΓΊ">
+Γ§Γ©Γ¥Γ°Γ©ΓΊ</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ°Γ¶Γ§Γ©ΓΊ">
+Γ Γ¤Γ΅Γ¤ Γ°Γ¶Γ§Γ©ΓΊ</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ¨Γ¤Γ¥ΓΈΓ¤">
+Γ Γ¤Γ΅Γ¤ Γ¨Γ¤Γ¥ΓΈΓ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ²Γ¶Γ¥Γ®Γ¤">
+Γ Γ¤Γ΅Γ¤ Γ²Γ¶Γ¥Γ®Γ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ°Γ¤Γ£ΓΈΓΊ">
+Γ Γ¤Γ΅Γ¤ Γ°Γ¤Γ£ΓΈΓΊ</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ°Γ΄Γ¬Γ Γ¤">
+Γ Γ¤Γ΅Γ¤ Γ°Γ΄Γ¬Γ Γ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ®Γ©Γ¥Γ§Γ£ΓΊ">
+Γ Γ¤Γ΅Γ¤ Γ®Γ©Γ¥Γ§Γ£ΓΊ</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ®Γ΄ΓΊΓ©Γ²Γ¤">
+Γ Γ¤Γ΅Γ¤ Γ®Γ΄ΓΊΓ©Γ²Γ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ¶Γ²Γ©ΓΈΓ¤">
+Γ Γ¤Γ΅Γ¤ Γ¶Γ²Γ©ΓΈΓ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ°Γ£Γ©ΓΈΓ¤">
+Γ Γ¤Γ΅Γ¤ Γ°Γ£Γ©ΓΈΓ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ§Γ®Γ¥Γ£Γ¤">
+Γ Γ¤Γ΅Γ¤ Γ§Γ®Γ¥Γ£Γ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ°Γ²Γ©Γ®Γ¤">
+Γ Γ¤Γ΅Γ¤ Γ°Γ²Γ©Γ®Γ¤</option>
+<option value="Γ Γ¤Γ΅Γ¤ Γ®Γ¬Γ¨Γ΄ΓΊ">
+Γ Γ¤Γ΅Γ¤ Γ®Γ¬Γ¨Γ΄ΓΊ</option>
 </select>
-<input type="button" onclick="checkName();" value="αγεχ αηιψδ"><br><br>
-δλπιρε λϊεαϊ ξιιμ ϊχπιϊ
+<input type="button" onclick="checkName();" value="Γ΅Γ£Γ¥Γ· Γ΅Γ§Γ©ΓΈΓ¤"><br><br>
+Γ¤Γ«Γ°Γ©Γ±Γ¥ Γ«ΓΊΓ¥Γ΅ΓΊ Γ®Γ©Γ©Γ¬ ΓΊΓ·Γ°Γ©ΓΊ
 <br>
 <input type="text" name="mailRead" size="30"><br>
 <input type="button" onclick="addDotCom();" value=".com">
 <input type="button" onclick="addDotCoIl();" value=".co.il">
 <input type="button" onclick="addShtrudel();" value="@"><br>
-<input type="button" onclick="checkMail();" value="αγεχ λϊεαϊ">
-<input type="button" onclick="deleteMail();" value="ξηχ λϊεαϊ"><br><br>
-δλπιρε ϊΰψικ μιγδ
+<input type="button" onclick="checkMail();" value="Γ΅Γ£Γ¥Γ· Γ«ΓΊΓ¥Γ΅ΓΊ">
+<input type="button" onclick="deleteMail();" value="Γ®Γ§Γ· Γ«ΓΊΓ¥Γ΅ΓΊ"><br><br>
+Γ¤Γ«Γ°Γ©Γ±Γ¥ ΓΊΓ ΓΈΓ©Γª Γ¬Γ©Γ£Γ¤
 <br>
-<input type="button" onclick="checkBirthDate();" value="δφβ βιμ">
+<input type="button" onclick="checkBirthDate();" value="Γ¤Γ¶ΓΆ ΓΆΓ©Γ¬">
 <select name="birthYear">
 <option value=1960>1960</option><option value=1961>1961</option>
 <option value=1962>1962</option><option value=1963>1963</option>
@@ -997,29 +997,29 @@ document.write("</table><br><br>");
 </select>
 <select name="birthMonth">
 <option value="1">
-ιπεΰψ</option>
+Γ©Γ°Γ¥Γ ΓΈ</option>
 <option value="2">
-ταψεΰψ</option>
+Γ΄Γ΅ΓΈΓ¥Γ ΓΈ</option>
 <option value="3">
-ξψυ</option>
+Γ®ΓΈΓµ</option>
 <option value="4">
-ΰτψιμ</option>
+Γ Γ΄ΓΈΓ©Γ¬</option>
 <option value="5">
-ξΰι</option>
+Γ®Γ Γ©</option>
 <option value="6">
-ιεπι</option>
+Γ©Γ¥Γ°Γ©</option>
 <option value="7">
-ιεμι</option>
+Γ©Γ¥Γ¬Γ©</option>
 <option value="8">
-ΰεβερθ</option>
+Γ Γ¥ΓΆΓ¥Γ±Γ¨</option>
 <option value="9">
-ρτθξαψ</option>
+Γ±Γ΄Γ¨Γ®Γ΅ΓΈ</option>
 <option value="10">
-ΰεχθεαψ</option>
+Γ Γ¥Γ·Γ¨Γ¥Γ΅ΓΈ</option>
 <option value="11">
-πεαξαψ</option>
+Γ°Γ¥Γ΅Γ®Γ΅ΓΈ</option>
 <option value="12">
-γφξαψ</option>
+Γ£Γ¶Γ®Γ΅ΓΈ</option>
 <option value="1">January</option><option value="2">February</option>
 <option value="3">March</option><option value="4">April</option>
 <option value="5">May</option><option value="6">June</option>
@@ -1046,28 +1046,28 @@ document.write("</table><br><br>");
 <option value="31">31</option>
 </select>
 <br><br>
-δχμιγε ριρξΰ
+Γ¤Γ·Γ¬Γ©Γ£Γ¥ Γ±Γ©Γ±Γ®Γ 
 <br>
 <input type="password"><br><br>
-ρξπε ΰν ψεϊν ΰδεαδ:
+Γ±Γ®Γ°Γ¥ Γ Γ­ ΓΈΓ¥ΓΊΓ­ Γ Γ¤Γ¥Γ΅Γ¤:
 <input type="checkbox" value="checkbox"><br>
-ρξπε ΰν ψεϊν ηξεγδ:
+Γ±Γ®Γ°Γ¥ Γ Γ­ ΓΈΓ¥ΓΊΓ­ Γ§Γ®Γ¥Γ£Γ¤:
 <input type="checkbox" value="checkbox"><br>
-ρξπε ΰν ψεϊν ξβπιαδ:
+Γ±Γ®Γ°Γ¥ Γ Γ­ ΓΈΓ¥ΓΊΓ­ Γ®ΓΆΓ°Γ©Γ΅Γ¤:
 <input type="checkbox" value="checkbox"><br><br>
-γψβε αιο 0 μ- 100 λξδ ΰϊν ΰεδαιν ΰϊ ψεϊν:
+Γ£ΓΈΓΆΓ¥ Γ΅Γ©Γ― 0 Γ¬- 100 Γ«Γ®Γ¤ Γ ΓΊΓ­ Γ Γ¥Γ¤Γ΅Γ©Γ­ Γ ΓΊ ΓΈΓ¥ΓΊΓ­:
 <br>
 <input type="range">
 <br>
-λϊαε τδ ξλϊα ΰδαδ
+Γ«ΓΊΓ΅Γ¥ Γ΄Γ¤ Γ®Γ«ΓΊΓ΅ Γ Γ¤Γ΅Γ¤
 <br>
 <textarea rows="4" cols="50"></textarea>
 <br><br>
 <img name="lovePic" src="PICS/1.png" /><br>
-<input type="button" onclick="aniStop();" value="ςφεψ ΰπιξφιδ">
-<input type="button" onclick="initAnimation();" value="δξωκ ΰπιξφιδ">
+<input type="button" onclick="aniStop();" value="Γ²Γ¶Γ¥ΓΈ Γ Γ°Γ©Γ®Γ¶Γ©Γ¤">
+<input type="button" onclick="initAnimation();" value="Γ¤Γ®ΓΉΓª Γ Γ°Γ©Γ®Γ¶Γ©Γ¤">
 <br><br>
-ωηχε αξωηχ δζιλψεο
+ΓΉΓ§Γ·Γ¥ Γ΅Γ®ΓΉΓ§Γ· Γ¤Γ¦Γ©Γ«ΓΈΓ¥Γ―
 <br><br>
 <img name="mem1" src="PICS/backCard.png" onclick="memAct1(this);" />
 <img name="mem2" src="PICS/backCard.png" onclick="memAct2(this);" />
@@ -1078,16 +1078,16 @@ document.write("</table><br><br>");
 <br><br>
 <hr>
 <img name="marvel" src="PICS/marvel.png" onmouseover="this.src='PICS/marvel2.png'" onmouseout="this.src='PICS/marvel.png'" onmousedown="shieldAccess(this);" onmouseup="this.src='PICS/marvel2.png'"><br>
-φτε ατϊιη δηγω εδξγδιν ωμ ξΰψεεμ
+Γ¶Γ΄Γ¥ Γ΅Γ΄ΓΊΓ©Γ§ Γ¤Γ§Γ£ΓΉ Γ¥Γ¤Γ®Γ£Γ¤Γ©Γ­ ΓΉΓ¬ Γ®Γ ΓΈΓ¥Γ¥Γ¬
 <br>
 <a href="https://www.youtube.com/watch?v=tXRJ7ozUJb0" target="_blank">Marvel Studios - the new logo 2016</a><br>
-δτϊιη ωμ ρτιιγψξο: δωιαδ δαιϊδ
+Γ¤Γ΄ΓΊΓ©Γ§ ΓΉΓ¬ Γ±Γ΄Γ©Γ©Γ£ΓΈΓ®Γ―: Γ¤ΓΉΓ©Γ΅Γ¤ Γ¤Γ΅Γ©ΓΊΓ¤
 <br>
 <a href="https://www.youtube.com/watch?v=Z-2SYlv2YFU" target="_blank">Spider Man Homecoming intro official Blu-Ray HD</a><br>
-δτϊιη δχεγν
+Γ¤Γ΄ΓΊΓ©Γ§ Γ¤Γ·Γ¥Γ£Γ­
 <br>
 <a href="https://www.youtube.com/watch?v=a1vWUe83LsQ" target="_blank">Marvel Studios - Intro|Logo: New Version (2013)</a><br>
-<h3><u>θψιιμψιν ηγωιν</u></h3>
+<h3><u>Γ¨ΓΈΓ©Γ©Γ¬ΓΈΓ©Γ­ Γ§Γ£ΓΉΓ©Γ­</u></h3>
 <a href="https://www.youtube.com/watch?v=xjDjIWPwcPU" target="_blank">Marvel Studios' Black Panther - Official Trailer</a><br><br>
 <a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" target="_blank">Marvel Studios' Avengers: Infinity War Official Trailer</a><br>
 <br><u>S.H.I.E.L.D. - Enter an agent name:</u><br><br>
@@ -1095,7 +1095,7 @@ document.write("</table><br><br>");
 <input type="button" onclick="checkAgent();" value="Check clearence"><br><br>
 <img name="marvel2" src="PICS/p1.jpg" height="200" width="200"><br><br>
 <img name="marvel3" src="PICS/p2.jpg" height="200" width="350"><br><br>
-<u><h2>ςπε ςμ ηιγεο ξΰψεεμ</h2></u>
+<u><h2>Γ²Γ°Γ¥ Γ²Γ¬ Γ§Γ©Γ£Γ¥Γ― Γ®Γ ΓΈΓ¥Γ¥Γ¬</h2></u>
 <br>
 <u>Q1: What is the real name of <b>Falcon</b>?</u>
 <br><br>
@@ -1373,7 +1373,7 @@ where do Captain America, Scarlet Witch, Quicksilver, Hawkeye and Black Widow fi
 <input type="radio" name="q45" value="Correct">Erik Killmonger<br><br>
 
 
-<input type="button" onclick="marvelCh();" value="αγεχ ϊωεαεϊ"><br><br>
+<input type="button" onclick="marvelCh();" value="Γ΅Γ£Γ¥Γ· ΓΊΓΉΓ¥Γ΅Γ¥ΓΊ"><br><br>
 </form>
 <br><hr>
 <script language="javascript">
@@ -1387,7 +1387,7 @@ for(i=1;i<=10;i++){
 }
 document.write("</table><br>");
 </script>
-<marquee behavior="alternate"><font color="midnightblue" size="38">αεπια ΰϊδ ηξεγ εϊεϊη</div></font></marquee>
+<marquee behavior="alternate"><font color="midnightblue" size="38">Γ΅Γ¥Γ°Γ©Γ΅ Γ ΓΊΓ¤ Γ§Γ®Γ¥Γ£ Γ¥ΓΊΓ¥ΓΊΓ§</div></font></marquee>
 <br><br>
 <font color="purple" size="34">
 <div id="nadav" onmouseover="this.style.fontSize=44" onmouseout="this.style.fontSize=34">
@@ -1396,7 +1396,7 @@ Hawkeye is awsome!!!
 <br><br>
 <form name="memForm">
 <br><br>
-ωηχε αξωηχ δζιλψεο
+ΓΉΓ§Γ·Γ¥ Γ΅Γ®ΓΉΓ§Γ· Γ¤Γ¦Γ©Γ«ΓΈΓ¥Γ―
 <br><br>
 <input type="text" name="memMsg" size="16" readonly="readonly" value="Enjoy the game!">
 <br><br>
