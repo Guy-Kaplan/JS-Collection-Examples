@@ -1,6 +1,5 @@
 <html>
 <head>
-<meta charset="UTF-8">
 <script language="javascript">
 var i, j, tmpColor, sltIndex, sltValue, msg, mailAdd, mailCounter=0, help, x, picIndex=0;
 var onePic, twoPic, threePic, pic;
@@ -32,7 +31,7 @@ function changeBG () {
 	if(newBG != "black" && newBG != "" && newBG != "000000"){
 		document.bgColor=newBG;}
 	else{
-		window.alert("אסור להקליד צבע שחור או להשאיר ריק");}
+		window.alert("Error. Don't type black or an empty string");}
 		document.myForm.bgRead.focus();
 	}
 function back2original () {document.bgColor="lightblue";}
@@ -44,7 +43,7 @@ function checkName() {
 	sltIndex = document.myForm.names.selectedIndex ;
 	sltValue = document.myForm.names.options[sltIndex].value ;
 	msg = "" ;
-	msg += "ðëåï îàåã!!! øåúí äéà àëï" ;
+	msg += "That's right!!! Rotem is indeed" ;
 	msg += " " + sltValue ;
 	alert(msg);
 	}
@@ -59,9 +58,9 @@ function checkMail() {
 	//for(i=0;i<splitMail2.length;i++){
 		//if(splitMail2[i] == ""){mailCounter=1;}
 		//}   // && mailCounter==0
-	if (mailAdd.indexOf("@") != -1 && mailAdd.indexOf(".") > 0 && mailAdd.indexOf("@") > 0){alert("äëúåáú ú÷éðä");}
+	if (mailAdd.indexOf("@") != -1 && mailAdd.indexOf(".") > 0 && mailAdd.indexOf("@") > 0){alert("The mail address is correct");}
 	else {
-		alert("äëúåáú ùâåéä. éù ìëúåá ìôçåú @ àçã åð÷åãä àçú");
+		alert("Error. Wrong mail address. Type at least one @ and one dot");
 		document.myForm.mailRead.focus();
 		}
 	}
@@ -831,8 +830,8 @@ function resetMem() {
 </script>
 </head>
 <body bgcolor="lightblue" onload="initAnimation();">
-<center><h1>האתר של גיא</h1></center><br>
-<marquee><font color="red"><h1>øåúí àäåáä - áãàì÷ ùìé</h1></font></marquee><br><hr>
+<center><h1>Guy's Website</h1></center><br>
+<marquee><font color="red"><h1>Rotem is loved - My BDALAK</h1></font></marquee><br><hr>
 <u>Today is:</u><br>
 <script language="javascript">
 y = setInterval ('makeClock();' ,1000) ;
@@ -857,7 +856,7 @@ document.write("<br>");
 document.write("<form name='myForm2'>");
 document.write("<input type='text' name='date3' size='6' readonly='readonly'></form>");
 document.write("<br>");
-document.write("<b><u>ìåç äëôì òã 10</u></b><br>");
+document.write("<b><u>Multiplication tables up to 10</u></b><br>");
 document.write("<br><table border='2'>");
 for(i=1;i<=10;i++){
 	document.write("<tr>");
@@ -872,98 +871,98 @@ document.write("</table><br><br>");
 </script>
 
 <form name="myForm">
-äëðéñå öáò ø÷ò ëîéìä áàðâìéú àå ëñôøåú åàåúéåú
+Enter a background color as an English word or as digits and/or letters:
 <br>
 <input type="text" name="bgRead" size="20">
-<input type="button" onclick="changeBG();" value="ùðä öáò ø÷ò">
-<input type="button" onclick="back2original();" value="öáò ø÷ò î÷åøé">
-<input type="button" onclick="deleteBG();" value="îç÷ è÷ñè"><br><br>
-áçøå ëéðåé ìøåúí
+<input type="button" onclick="changeBG();" value="Change background color">
+<input type="button" onclick="back2original();" value="Original background color">
+<input type="button" onclick="deleteBG();" value="Delete text"><br><br>
+Choose a nickname for Rotem:
 <br>
 <select name="names">
-<option value="àäáä">
-àäáä</option>
-<option value="çééí">
-çééí</option>
-<option value="áãàì÷">
-áãàì÷</option>
-<option value="òéåðé">
-òéåðé</option>
-<option value="àäåáä">
-àäåáä</option>
-<option value="éôä">
-éôä</option>
-<option value="ðñéëä">
-ðñéëä</option>
-<option value="ëôøä">
-ëôøä</option>
-<option value="òéðééí">
-òéðééí</option>
-<option value="ãåáùðéú">
-ãåáùðéú</option>
-<option value="òåìí">
-òåìí</option>
-<option value="é÷åí">
-é÷åí</option>
-<option value="úáì">
-úáì</option>
-<option value="îãäéîä">
-îãäéîä</option>
-<option value="îäîîú">
-îäîîú</option>
-<option value="îúå÷ä">
-îúå÷ä</option>
-<option value="çîåãä">
-çîåãä</option>
-<option value="àåäáú">
-àåäáú</option>
-<option value="çîä">
-çîä</option>
-<option value="çëîä">
-çëîä</option>
-<option value="çøåöä">
-çøåöä</option>
-<option value="ìááéú">
-ìááéú</option>
-<option value="çéåðéú">
-çéåðéú</option>
-<option value="àäáä ðöçéú">
-àäáä ðöçéú</option>
-<option value="àäáä èäåøä">
-àäáä èäåøä</option>
-<option value="àäáä òöåîä">
-àäáä òöåîä</option>
-<option value="àäáä ðäãøú">
-àäáä ðäãøú</option>
-<option value="àäáä ðôìàä">
-àäáä ðôìàä</option>
-<option value="àäáä îéåçãú">
-àäáä îéåçãú</option>
-<option value="àäáä îôúéòä">
-àäáä îôúéòä</option>
-<option value="àäáä öòéøä">
-àäáä öòéøä</option>
-<option value="àäáä ðãéøä">
-àäáä ðãéøä</option>
-<option value="àäáä çîåãä">
-àäáä çîåãä</option>
-<option value="àäáä ðòéîä">
-àäáä ðòéîä</option>
-<option value="àäáä îìèôú">
-àäáä îìèôú</option>
+<option value="love">
+love</option>
+<option value="life">
+life</option>
+<option value="BDALAK">
+BDALAK</option>
+<option value="AYOONI">
+AYOONI</option>
+<option value="loved">
+loved</option>
+<option value="beautiful">
+beautiful</option>
+<option value="princess">
+princess</option>
+<option value="KAPARA">
+KAPARA</option>
+<option value="eyes">
+eyes</option>
+<option value="honey">
+honey</option>
+<option value="OLAM">
+OLAM</option>
+<option value="YEKUM">
+YEKUM</option>
+<option value="TEVEL">
+TEVEL</option>
+<option value="amazing">
+amazing</option>
+<option value="gorgeous">
+gorgeous</option>
+<option value="sweet">
+sweet</option>
+<option value="cute">
+cute</option>
+<option value="loving">
+loving</option>
+<option value="warm">
+warm</option>
+<option value="smart">
+smart</option>
+<option value="diligent">
+diligent</option>
+<option value="lovely">
+lovely</option>
+<option value="vital">
+vital</option>
+<option value="Eternal love">
+Eternal love</option>
+<option value="Pure love">
+Pure love</option>
+<option value="Huge love">
+Huge love</option>
+<option value="Great love">
+Great love</option>
+<option value="Wonderful love">
+Wonderful love</option>
+<option value="Special love">
+Special love</option>
+<option value="Surprising love">
+Surprising love</option>
+<option value="Young love">
+Young love</option>
+<option value="Rare love">
+Rare love</option>
+<option value="Cute love">
+Cute love</option>
+<option value="Pleasant love">
+Pleasant love</option>
+<option value="Petting love">
+Petting love</option>
 </select>
-<input type="button" onclick="checkName();" value="áãå÷ áçéøä"><br><br>
-äëðéñå ëúåáú îééì ú÷ðéú
+<input type="button" onclick="checkName();" value="Check your choise"><br><br>
+Enter a correct email address:
 <br>
 <input type="text" name="mailRead" size="30"><br>
 <input type="button" onclick="addDotCom();" value=".com">
 <input type="button" onclick="addDotCoIl();" value=".co.il">
 <input type="button" onclick="addShtrudel();" value="@"><br>
-<input type="button" onclick="checkMail();" value="áãå÷ ëúåáú">
-<input type="button" onclick="deleteMail();" value="îç÷ ëúåáú"><br><br>
-äëðéñå úàøéê ìéãä
+<input type="button" onclick="checkMail();" value="Check address">
+<input type="button" onclick="deleteMail();" value="Delete address"><br><br>
+Enter your birthday date:
 <br>
-<input type="button" onclick="checkBirthDate();" value="äöâ âéì">
+<input type="button" onclick="checkBirthDate();" value="Display age">
 <select name="birthYear">
 <option value=1960>1960</option><option value=1961>1961</option>
 <option value=1962>1962</option><option value=1963>1963</option>
@@ -997,30 +996,6 @@ document.write("</table><br><br>");
 <option value=2017>2017</option><option value=2018>2018</option>
 </select>
 <select name="birthMonth">
-<option value="1">
-éðåàø</option>
-<option value="2">
-ôáøåàø</option>
-<option value="3">
-îøõ</option>
-<option value="4">
-àôøéì</option>
-<option value="5">
-îàé</option>
-<option value="6">
-éåðé</option>
-<option value="7">
-éåìé</option>
-<option value="8">
-àåâåñè</option>
-<option value="9">
-ñôèîáø</option>
-<option value="10">
-àå÷èåáø</option>
-<option value="11">
-ðåáîáø</option>
-<option value="12">
-ãöîáø</option>
 <option value="1">January</option><option value="2">February</option>
 <option value="3">March</option><option value="4">April</option>
 <option value="5">May</option><option value="6">June</option>
@@ -1047,28 +1022,28 @@ document.write("</table><br><br>");
 <option value="31">31</option>
 </select>
 <br><br>
-ä÷ìéãå ñéñîà
+Enter password:
 <br>
 <input type="password"><br><br>
-ñîðå àí øåúí àäåáä:
+Check if Rotem is loved:
 <input type="checkbox" value="checkbox"><br>
-ñîðå àí øåúí çîåãä:
+Check if Rotem is cute:
 <input type="checkbox" value="checkbox"><br>
-ñîðå àí øåúí îâðéáä:
+Check if Rotem is cool:
 <input type="checkbox" value="checkbox"><br><br>
-ãøâå áéï 0 ì- 100 ëîä àúí àåäáéí àú øåúí:
+Rate between 0 to 100 how much you love Rotem:
 <br>
 <input type="range">
 <br>
-ëúáå ôä îëúá àäáä
+Write here a love letter:
 <br>
 <textarea rows="4" cols="50"></textarea>
 <br><br>
 <img name="lovePic" src="PICS/1.png" /><br>
-<input type="button" onclick="aniStop();" value="òöåø àðéîöéä">
-<input type="button" onclick="initAnimation();" value="äîùê àðéîöéä">
+<input type="button" onclick="aniStop();" value="Stop animation">
+<input type="button" onclick="initAnimation();" value="Continue animation">
 <br><br>
-ùç÷å áîùç÷ äæéëøåï
+Play the Concentration game (AKA Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or Pairs):
 <br><br>
 <img name="mem1" src="PICS/backCard.png" onclick="memAct1(this);" />
 <img name="mem2" src="PICS/backCard.png" onclick="memAct2(this);" />
@@ -1079,16 +1054,16 @@ document.write("</table><br><br>");
 <br><br>
 <hr>
 <img name="marvel" src="PICS/marvel.png" onmouseover="this.src='PICS/marvel2.png'" onmouseout="this.src='PICS/marvel.png'" onmousedown="shieldAccess(this);" onmouseup="this.src='PICS/marvel2.png'"><br>
-öôå áôúéç äçãù åäîãäéí ùì îàøååì
+Watch the amazing new Marvel opening logo clip/video:
 <br>
 <a href="https://www.youtube.com/watch?v=tXRJ7ozUJb0" target="_blank">Marvel Studios - the new logo 2016</a><br>
-äôúéç ùì ñôééãøîï: äùéáä äáéúä
+The opening of Spiderman: Homecoming
 <br>
 <a href="https://www.youtube.com/watch?v=Z-2SYlv2YFU" target="_blank">Spider Man Homecoming intro official Blu-Ray HD</a><br>
-äôúéç ä÷åãí
+The previous Marvel opening:
 <br>
 <a href="https://www.youtube.com/watch?v=a1vWUe83LsQ" target="_blank">Marvel Studios - Intro|Logo: New Version (2013)</a><br>
-<h3><u>èøééìøéí çãùéí</u></h3>
+<h3><u>New Trailers</u></h3>
 <a href="https://www.youtube.com/watch?v=xjDjIWPwcPU" target="_blank">Marvel Studios' Black Panther - Official Trailer</a><br><br>
 <a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" target="_blank">Marvel Studios' Avengers: Infinity War Official Trailer</a><br>
 <br><u>S.H.I.E.L.D. - Enter an agent name:</u><br><br>
@@ -1096,7 +1071,7 @@ document.write("</table><br><br>");
 <input type="button" onclick="checkAgent();" value="Check clearence"><br><br>
 <img name="marvel2" src="PICS/p1.jpg" height="200" width="200"><br><br>
 <img name="marvel3" src="PICS/p2.jpg" height="200" width="350"><br><br>
-<u><h2>òðå òì çéãåï îàøååì</h2></u>
+<u><h2>Answer my Marvel quiz:</h2></u>
 <br>
 <u>Q1: What is the real name of <b>Falcon</b>?</u>
 <br><br>
@@ -1374,7 +1349,7 @@ where do Captain America, Scarlet Witch, Quicksilver, Hawkeye and Black Widow fi
 <input type="radio" name="q45" value="Correct">Erik Killmonger<br><br>
 
 
-<input type="button" onclick="marvelCh();" value="áãå÷ úùåáåú"><br><br>
+<input type="button" onclick="marvelCh();" value="Check quiz"><br><br>
 </form>
 <br><hr>
 <script language="javascript">
@@ -1388,7 +1363,7 @@ for(i=1;i<=10;i++){
 }
 document.write("</table><br>");
 </script>
-<marquee behavior="alternate"><font color="midnightblue" size="38">áåðéá àúä çîåã åúåúç</div></font></marquee>
+<marquee behavior="alternate"><font color="midnightblue" size="38">BOONIV you are cute and lovely</div></font></marquee>
 <br><br>
 <font color="purple" size="34">
 <div id="nadav" onmouseover="this.style.fontSize=44" onmouseout="this.style.fontSize=34">
@@ -1397,7 +1372,7 @@ Hawkeye is awsome!!!
 <br><br>
 <form name="memForm">
 <br><br>
-ùç÷å áîùç÷ äæéëøåï
+Play the Concentration game (AKA Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or Pairs):
 <br><br>
 <input type="text" name="memMsg" size="16" readonly="readonly" value="Enjoy the game!">
 <br><br>
@@ -1420,11 +1395,3 @@ Hawkeye is awsome!!!
 </form>
 </body>
 </html>
-
-
-
-
-
-
-
-
