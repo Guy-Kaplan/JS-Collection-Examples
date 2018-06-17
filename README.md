@@ -8,7 +8,8 @@ This collection includes:
 4. Two memory games
 5. Marvel quiz
 
-All Marvel names, characters, images and movie names are copyrights of Marvel Entertainment, LLC &copy;
+All Marvel names, characters, images and movie names are copyrights of Marvel Entertainment, LLC &copy;<br>
+All Rights Reserved.<br>
 
 The rest of the code is GPL v3.0.
 
